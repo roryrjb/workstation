@@ -1,0 +1,11 @@
+- hosts: all
+  roles:
+    - common
+    - docker
+    - kubernetes
+    - mysql_client
+    - nodejs
+    - python
+    - squid
+    - laptop
+    - gnome

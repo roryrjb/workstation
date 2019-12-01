@@ -1,0 +1,96 @@
+- name: dev packages
+  become: true
+  become_method: sudo
+  pacman:
+    name:
+      - the_silver_searcher
+      - shellcheck
+      - valgrind
+      - strace
+      - ctags
+      - meson
+      - ninja
+      - cmake
+      - pandoc
+      - bison
+      - flex
+      - bc
+      - m4
+      - texinfo
+      - jq
+      - bind-tools
+      - bmake
+      - clang
+      - minisign
+      - intltool
+      - redis
+      - hugo
+      - diff-so-fancy
+      - terraform
+    state: present
+
+- name: libs
+  become: true
+  become_method: sudo
+  pacman:
+    name:
+      - systemd-libs
+      - openssl
+      - pcre
+      - libjpeg6-turbo
+      - cairo
+      - giflib
+      - libffi
+      - libelf
+      - readline
+      - libseccomp
+      - libcap
+      - ncurses
+    state: present
+
+- name: pacman packages
+  become: true
+  become_method: sudo
+  pacman:
+    name:
+      - libu2f-host
+      - openssh
+      - openvpn
+      - firefox
+      - hplip
+      - tlp
+      - fail2ban
+      - ffmpeg
+      - obs-studio
+      - qt5-styleplugins
+      - gst-libav
+      - gst-plugins-ugly
+      - gst-plugins-bad
+      - gst-plugins-good
+      - pamixer
+      - discount
+      - libreoffice
+      - keepassxc
+      - rhythmbox
+      - chromium
+      - simple-scan
+      - hplip
+      - rtorrent
+      - noto-fonts-emoji
+      - gimp
+      - xsel
+      - vlc
+      - gvfs-mtp
+      - gvfs-gphoto2
+      - mutt
+      - perl-authen-sasl
+      - perl-net-smtp-ssl
+      - perl-mime-tools
+      - networkmanager-openvpn
+      - newsboat
+      - irssi
+      - man-pages
+      - evince
+      - isync
+      - xterm
+    state: present

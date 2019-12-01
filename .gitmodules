@@ -1,0 +1,6 @@
+[submodule "ansible-roles"]
+	path = ansible-roles
+	url = git@git.sr.ht:~roryrjb/ansible-roles
+[submodule "roles/laptop/files"]
+	path = roles/laptop/files
+	url = git@git.sr.ht:~roryrjb/dotfiles

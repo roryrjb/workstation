@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+
+sudo pacman -Sy --needed python python-setuptools python-pip
+
+pip3 install --user ansible

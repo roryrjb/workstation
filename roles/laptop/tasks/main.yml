@@ -1,0 +1,82 @@
+- name: laptop
+  include: "{{ distro }}_{{ release }}.yml"
+
+- name: environment variables
+  become: true
+  become_method: sudo
+  blockinfile:
+    name: /etc/environment
+    marker: '# {mark} ansible desktop'
+    block: |
+      QT_QPA_PLATFORMTHEME=gtk2
+      QT_PLATFORM_PLUGIN=gtk2
+      QT_PLATFORMTHEME=gtk2
+      QT_AUTO_SCREEN_SCALE_FACTOR=0
+
+- name: python2 packages
+  pip:
+    name: "{{ item }}"
+    executable: pip2
+    extra_args: --user
+  loop:
+    - docker-compose
+    - youtube_dl
+    - virtualenv
+    - isort
+    - s3cmd
+    - psutil
+    - flake8
+
+- name: python3 packages
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+    extra_args: --user
+  loop:
+    - mypy
+    - psutil
+    - yamllint
+    - asciinema
+    - meson
+    - vim-vint
+    - black
+    - flake8
+    - twine
+
+- name: npm packages
+  npm:
+    name: "{{ item }}"
+    global: true
+  with_items:
+    - st
+    - standard
+    - csslint
+
+- name: ufw deny all
+  become: true
+  become_method: sudo
+  ufw:
+    state: enabled
+    policy: deny
+    direction: incoming
+
+- name: required config directories
+  file: state=directory path={{ item }}
+  with_items:
+    - '{{ ansible_env.HOME }}/.config/yamllint'
+    - '{{ ansible_env.HOME }}/.config/htop'
+    - '{{ ansible_env.HOME }}/.config/fontconfig'
+
+- name: config files
+  copy: src={{ item.src }} dest={{ item.dest }}
+  with_items:
+    - {src: '{{ role_path }}/files/.pylintrc', dest: '{{ ansible_env.HOME }}/.pylintrc'}
+    - {src: '{{ role_path }}/files/.tmux.conf', dest: '{{ ansible_env.HOME }}/.tmux.conf'}
+    - {src: '{{ role_path }}/files/.gitconfig', dest: '{{ ansible_env.HOME }}/.gitconfig'}
+    - {src: '{{ role_path }}/files/.gitignore', dest: '{{ ansible_env.HOME }}/.gitignore'}
+    - {src: '{{ role_path }}/files/.profile', dest: '{{ ansible_env.HOME }}/.profile'}
+    - {src: '{{ role_path }}/files/.Xresources', dest: '{{ ansible_env.HOME }}/.Xresources'}
+    - {src: '{{ role_path }}/files/.ansible.cfg', dest: '{{ ansible_env.HOME }}/.ansible.cfg'}
+    - {src: '{{ role_path }}/files/.config/yamllint/config', dest: '{{ ansible_env.HOME }}/.config/yamllint/config'}
+    - {src: '{{ role_path }}/files/.config/htop/htoprc', dest: '{{ ansible_env.HOME }}/.config/htop/htoprc'}
+    - {src: '{{ role_path }}/files/.config/fontconfig/fonts.conf', dest: '{{ ansible_env.HOME }}/.config/fontconfig/fonts.conf'}
