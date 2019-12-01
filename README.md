@@ -8,5 +8,5 @@ This is a set of Ansible roles that will set up my laptop with the current devel
 
 ### Related
 
-- [dotfiles]()
-- [ansible-roles]()
+- [dotfiles](https://git.sr.ht/~roryrjb/dotfiles)
+- [ansible-roles](https://git.sr.ht/~roryrjb/ansible-roles)
