@@ -1,4 +1,4 @@
-# dotfiles
+# workstation
 
 > Development laptop setup
 
