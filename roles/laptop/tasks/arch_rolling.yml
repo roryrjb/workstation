@@ -25,8 +25,8 @@
       - intltool
       - redis
       - hugo
-      - diff-so-fancy
       - terraform
+      - jdk8-openjdk
     state: present
 
 - name: libs
@@ -75,7 +75,7 @@
       - chromium
       - simple-scan
       - hplip
-      - rtorrent
+      - transmission-gtk
       - noto-fonts-emoji
       - gimp
       - xsel
@@ -92,5 +92,5 @@
       - man-pages
       - evince
       - isync
-      - xterm
+      - alacritty
     state: present

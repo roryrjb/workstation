@@ -157,7 +157,6 @@
       - obs-studio
       - gnome-session
       - gnome-tweaks
-      - rtorrent
     state: present
 
 - name: remove packages
