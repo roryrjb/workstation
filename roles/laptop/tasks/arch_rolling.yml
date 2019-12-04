@@ -92,5 +92,7 @@
       - man-pages
       - evince
       - isync
-      - alacritty
+      - xterm
+      - terminus-font
+      - xorg-xfontsel
     state: present
