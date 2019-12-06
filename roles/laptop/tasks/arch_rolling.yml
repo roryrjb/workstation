@@ -27,6 +27,8 @@
       - hugo
       - terraform
       - jdk8-openjdk
+      - afl
+      - afl-utils
     state: present
 
 - name: libs
@@ -46,6 +48,7 @@
       - libseccomp
       - libcap
       - ncurses
+      - libgit2
     state: present
 
 - name: pacman packages
@@ -93,6 +96,15 @@
       - evince
       - isync
       - xterm
+      - tamsyn-font
       - terminus-font
-      - xorg-xfontsel
+      - xfontsel
     state: present
+
+- name: aur
+  become: true
+  become_method: sudo
+  aur:
+    use: yay
+    name:
+      - zoom
