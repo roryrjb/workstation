@@ -25,7 +25,6 @@
       - intltool
       - redis
       - hugo
-      - terraform
       - jdk8-openjdk
       - afl
       - afl-utils
@@ -78,7 +77,6 @@
       - chromium
       - simple-scan
       - hplip
-      - transmission-gtk
       - noto-fonts-emoji
       - gimp
       - xsel
@@ -90,10 +88,10 @@
       - perl-net-smtp-ssl
       - perl-mime-tools
       - networkmanager-openvpn
+      - rtorrent
       - newsboat
       - irssi
       - man-pages
-      - evince
       - isync
       - xterm
       - tamsyn-font

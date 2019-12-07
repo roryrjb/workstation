@@ -60,6 +60,13 @@
     policy: deny
     direction: incoming
 
+- name: required system config directories
+  become: true
+  become_method: sudo
+  file: state=directory path={{ item }}
+  with_items:
+    - /etc/X11/xorg.conf.d/
+
 - name: required config directories
   file: state=directory path={{ item }}
   with_items:
@@ -70,13 +77,16 @@
 - name: config files
   copy: src={{ item.src }} dest={{ item.dest }}
   with_items:
-    - {src: '{{ role_path }}/files/.pylintrc', dest: '{{ ansible_env.HOME }}/.pylintrc'}
     - {src: '{{ role_path }}/files/.tmux.conf', dest: '{{ ansible_env.HOME }}/.tmux.conf'}
     - {src: '{{ role_path }}/files/.gitconfig', dest: '{{ ansible_env.HOME }}/.gitconfig'}
     - {src: '{{ role_path }}/files/.gitignore', dest: '{{ ansible_env.HOME }}/.gitignore'}
-    - {src: '{{ role_path }}/files/.profile', dest: '{{ ansible_env.HOME }}/.profile'}
+    - {src: '{{ role_path }}/files/.bashrc', dest: '{{ ansible_env.HOME }}/.bashrc'}
+    - {src: '{{ role_path }}/files/.bash_profile', dest: '{{ ansible_env.HOME }}/.bash_profile'}
     - {src: '{{ role_path }}/files/.Xresources', dest: '{{ ansible_env.HOME }}/.Xresources'}
+    - {src: '{{ role_path }}/files/.xinitrc', dest: '{{ ansible_env.HOME }}/.xinitrc'}
+    - {src: '{{ role_path }}/files/.rtorrent.rc', dest: '{{ ansible_env.HOME }}/.rtorrent.rc'}
     - {src: '{{ role_path }}/files/.ansible.cfg', dest: '{{ ansible_env.HOME }}/.ansible.cfg'}
+    - {src: '{{ role_path }}/files/.config/redshift.conf', dest: '{{ ansible_env.HOME }}/.config/redshift.conf'}
     - {src: '{{ role_path }}/files/.config/yamllint/config', dest: '{{ ansible_env.HOME }}/.config/yamllint/config'}
     - {src: '{{ role_path }}/files/.config/htop/htoprc', dest: '{{ ansible_env.HOME }}/.config/htop/htoprc'}
     - {src: '{{ role_path }}/files/.config/fontconfig/fonts.conf', dest: '{{ ansible_env.HOME }}/.config/fontconfig/fonts.conf'}
