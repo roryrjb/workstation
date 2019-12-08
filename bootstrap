@@ -3,5 +3,5 @@
 set -e
 
 sudo pacman -Sy --needed python python-setuptools python-pip \
-    netplan wpa_supplicant git make gcc gcc-libs vim ansible \
+    git make gcc gcc-libs vim ansible \
     python-virtualenv curl ufw networkmanager

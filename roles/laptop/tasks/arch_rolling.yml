@@ -63,7 +63,6 @@
       - tlp
       - fail2ban
       - ffmpeg
-      - obs-studio
       - qt5-styleplugins
       - gst-libav
       - gst-plugins-ugly
@@ -81,8 +80,6 @@
       - gimp
       - xsel
       - vlc
-      - gvfs-mtp
-      - gvfs-gphoto2
       - mutt
       - perl-authen-sasl
       - perl-net-smtp-ssl
@@ -90,18 +87,20 @@
       - networkmanager-openvpn
       - rtorrent
       - newsboat
+      - redshift
       - irssi
       - man-pages
+      - man-db
       - isync
       - xterm
       - tamsyn-font
       - terminus-font
-      - xfontsel
+      - pavucontrol
+      - simplescreenrecorder
+      - darktable
     state: present
 
 - name: aur
-  become: true
-  become_method: sudo
   aur:
     use: yay
     name:
