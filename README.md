@@ -9,7 +9,7 @@ This is a set of Ansible roles that will set up my laptop with the current devel
 I used to use an Ubuntu base now I use an Arch base. Both are represented in this
 repo and the submodules it uses, but the Arch configs are much more up to date.
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.png "Screenshot")
 
 ### Related
 
