@@ -10,6 +10,26 @@
     - "ppa:dysfunctionalprogramming/oksh"
     - "ppa:dysfunctionalprogramming/minisign"
 
+- name: remove packages
+  become: true
+  become_method: sudo
+  apt:
+    name:
+      - thunderbird
+      - redshift-gtk
+      - rhythmbox
+      - transmission-gtk
+      - gnome-mpv
+      - mpv
+      - cheese
+      - deja-dup
+      - deja-dup-caja
+      - shotwell
+      - orca
+      - onboard
+      - magnus
+    state: absent
+
 - name: dev packages
   become: true
   become_method: sudo
@@ -141,10 +161,9 @@
       - discount
       - libreoffice
       - keepassxc
-      - rhythmbox
       - simple-scan
+      - aria2
       - hplip
-      - transmission-gtk
       - gimp
       - xsel
       - vlc
@@ -154,15 +173,6 @@
       - irssi
       - silversearcher-ag
       - xterm
-      - obs-studio
-      - gnome-session
-      - gnome-tweaks
+      - redshift
+      - mpg123
     state: present
-
-- name: remove packages
-  become: true
-  become_method: sudo
-  apt:
-    name:
-      - thunderbird
-    state: absent

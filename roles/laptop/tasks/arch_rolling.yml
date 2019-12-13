@@ -63,7 +63,6 @@
       - tlp
       - fail2ban
       - ffmpeg
-      - qt5-styleplugins
       - gst-libav
       - gst-plugins-ugly
       - gst-plugins-bad
@@ -84,20 +83,18 @@
       - perl-authen-sasl
       - perl-net-smtp-ssl
       - perl-mime-tools
-      - networkmanager-openvpn
-      - rtorrent
       - newsboat
+      - aria2
       - redshift
       - irssi
       - man-pages
       - man-db
       - isync
       - xterm
+      - xorg-xfontsel
       - tamsyn-font
       - terminus-font
-      - pavucontrol
       - simplescreenrecorder
-      - darktable
     state: present
 
 - name: aur

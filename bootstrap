@@ -1,7 +1,0 @@
-#!/bin/sh
-
-set -e
-
-sudo pacman -Sy --needed python python-setuptools python-pip \
-    git make gcc gcc-libs vim ansible \
-    python-virtualenv curl ufw networkmanager
