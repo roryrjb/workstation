@@ -1,3 +1,12 @@
+- name: gpg keys url
+  become: true
+  become_method: sudo
+  apt_key:
+    url: "{{ item }}"
+    state: present
+  loop:
+    - "https://dl.google.com/linux/linux_signing_key.pub"
+
 - name: add repos
   become: true
   become_method: sudo
@@ -9,6 +18,7 @@
     - "ppa:dysfunctionalprogramming/pamixer"
     - "ppa:dysfunctionalprogramming/oksh"
     - "ppa:dysfunctionalprogramming/minisign"
+    - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 
 - name: remove packages
   become: true
@@ -175,4 +185,5 @@
       - xterm
       - redshift
       - mpg123
+      - google-chrome-stable
     state: present
