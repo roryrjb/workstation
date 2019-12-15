@@ -64,6 +64,7 @@
       - xml-twig-tools
       - jq
       - imagemagick
+      - original-awk
       - uuid-runtime
       - dnsutils
       - optipng
@@ -175,6 +176,7 @@
       - aria2
       - hplip
       - gimp
+      - inkscape
       - xsel
       - vlc
       - isync
