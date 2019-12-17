@@ -27,7 +27,6 @@
     name:
       - thunderbird
       - redshift-gtk
-      - rhythmbox
       - transmission-gtk
       - gnome-mpv
       - mpv
@@ -38,6 +37,7 @@
       - orca
       - onboard
       - magnus
+      - evolution
     state: absent
 
 - name: dev packages
@@ -95,6 +95,19 @@
       - qemu-system-s390x
       - qemu-system-sparc
       - qemu-system-mips
+      - docker-compose
+      - virtualenv
+      - isort
+      - s3cmd
+      - flake8
+      - black
+      - mypy
+      - mypy-doc
+      - python3-mypy
+      - yamllint
+      - asciinema
+      - meson
+      - twine
     state: present
 
 - name: libs
@@ -185,7 +198,7 @@
       - irssi
       - silversearcher-ag
       - xterm
-      - redshift
       - mpg123
       - google-chrome-stable
+      - youtube-dl
     state: present

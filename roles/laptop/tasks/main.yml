@@ -1,35 +1,13 @@
 - name: laptop
   include: "{{ distro }}_{{ release }}.yml"
 
-- name: python2 packages
-  pip:
-    name: "{{ item }}"
-    executable: pip2
-    extra_args: --user
-  loop:
-    - docker-compose
-    - youtube_dl
-    - virtualenv
-    - isort
-    - s3cmd
-    - psutil
-    - flake8
-
 - name: python3 packages
   pip:
     name: "{{ item }}"
     executable: pip3
     extra_args: --user
   loop:
-    - mypy
-    - psutil
-    - yamllint
-    - asciinema
-    - meson
     - vim-vint
-    - black
-    - flake8
-    - twine
 
 - name: npm packages
   npm:
