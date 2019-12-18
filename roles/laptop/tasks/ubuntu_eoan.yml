@@ -27,7 +27,6 @@
     name:
       - thunderbird
       - redshift-gtk
-      - transmission-gtk
       - gnome-mpv
       - mpv
       - cheese
@@ -97,6 +96,7 @@
       - qemu-system-mips
       - docker-compose
       - virtualenv
+      - pipenv
       - isort
       - s3cmd
       - flake8
@@ -201,4 +201,12 @@
       - mpg123
       - google-chrome-stable
       - youtube-dl
+      - gnome-tweaks
     state: present
+
+- name: disable apport
+  become: true
+  become_method: sudo
+  systemd:
+    name: apport
+    enabled: false
