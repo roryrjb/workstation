@@ -96,7 +96,6 @@
       - qemu-system-sparc
       - qemu-system-mips
       - qemu-utils
-      - qemu-kvm
       - virtualbox
       - virtualbox-qt
       - docker-compose
