@@ -26,9 +26,6 @@
   apt:
     name:
       - thunderbird
-      - redshift-gtk
-      - gnome-mpv
-      - mpv
       - cheese
       - deja-dup
       - deja-dup-caja
@@ -49,7 +46,7 @@
       - gdb
       - rr
       - strace
-      - universal-ctags
+      - exuberant-ctags
       - cscope
       - python-pygments
       - meson
@@ -87,6 +84,9 @@
       - clang-format
       - clang-tidy
       - minisign
+      - golang
+      - rustc
+      - cargo
       - intltool
       - redis-tools
       - qemu-system
@@ -99,13 +99,12 @@
       - qemu-kvm
       - virtualbox
       - virtualbox-qt
+      - libvirt-bin
       - docker-compose
       - virtualenv
-      - pipenv
       - isort
       - s3cmd
       - flake8
-      - black
       - mypy
       - mypy-doc
       - python3-mypy
@@ -167,8 +166,8 @@
       - libinput-dev
       - libgtkmm-3.0-dev
       - libjsoncpp-dev
-      - libgit2-dev
       - libevent-dev
+      - libpam0g-dev
     state: present
 
 - name: packages
@@ -198,22 +197,15 @@
       - gimp
       - inkscape
       - xsel
-      - vlc
       - isync
       - mutt
       - newsboat
       - irssi
       - silversearcher-ag
+      - rhythmbox
       - xterm
       - mpg123
       - google-chrome-stable
       - youtube-dl
       - redshift
     state: present
-
-- name: disable apport
-  become: true
-  become_method: sudo
-  systemd:
-    name: apport
-    enabled: false
