@@ -2,5 +2,5 @@
 localhost ansible_connection=local
 
 [all:vars]
-release=eoan
-distro=ubuntu
+release=buster
+distro=debian

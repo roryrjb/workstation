@@ -6,6 +6,5 @@
     - mysql_client
     - nodejs
     - python
-    - squid
+    # - squid
     - laptop
-    # - gnome

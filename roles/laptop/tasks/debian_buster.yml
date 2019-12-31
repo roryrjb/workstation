@@ -5,7 +5,7 @@
     url: "{{ item }}"
     state: present
   loop:
-    - "https://dl.google.com/linux/linux_signing_key.pub"
+    - "https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
 
 - name: add repos
   become: true
@@ -13,31 +13,8 @@
   apt_repository:
     state: present
     repo: "{{ item }}"
-    codename: "{{ release }}"
   loop:
-    - "ppa:dysfunctionalprogramming/pamixer"
-    - "ppa:dysfunctionalprogramming/oksh"
-    - "ppa:dysfunctionalprogramming/minisign"
-    - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-
-- name: remove packages
-  become: true
-  become_method: sudo
-  apt:
-    name:
-      - thunderbird
-      - redshift-gtk
-      - gnome-mpv
-      - mpv
-      - cheese
-      - deja-dup
-      - deja-dup-caja
-      - shotwell
-      - orca
-      - onboard
-      - magnus
-      - evolution
-    state: absent
+    - "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ {{ release }} main"
 
 - name: dev packages
   become: true
@@ -69,16 +46,12 @@
       - uuid-runtime
       - dnsutils
       - optipng
-      - openjdk-8-jdk
       - xvfb
       - bmake
       - freebsd-buildutils
       - mandoc
       - luajit
       - mkosi
-      # - php
-      # - php-curl
-      - oksh
       - ksh
       - tcsh
       - zsh
@@ -86,16 +59,12 @@
       - clang
       - clang-format
       - clang-tidy
-      - minisign
       - intltool
       - redis-tools
-      - virtualbox
-      - virtualbox-qt
       - docker-compose
       - virtualenv
       - pipenv
       - isort
-      - s3cmd
       - flake8
       - black
       - mypy
@@ -107,6 +76,8 @@
       - twine
       - cvs
       - subversion
+      - adoptopenjdk-8-hotspot
+      - s4cmd
     state: present
 
 - name: libs
@@ -131,8 +102,8 @@
       - libgtk2.0-0
       - libgtk-3-dev
       - libinih-dev
-      - libjpeg9-dev
       - libllvm6.0
+      - libjpeg62-turbo-dev
       - libncurses5-dev
       - libnotify-dev
       - libnss3
@@ -141,8 +112,6 @@
       - libseccomp-dev
       - libsqlite3-dev
       - libssl-dev
-      # - libstdc++6:i386
-      # - libstdc++6-i386-cross
       - libsystemd-dev
       - libtagc0-dev
       - libxss1
@@ -150,7 +119,6 @@
       - llvm-7-dev
       - llvm-7-runtime
       - systemtap-sdt-dev
-      # - zlib1g:i386
       - libavutil-dev
       - libavcodec-dev
       - libavformat-dev
@@ -171,17 +139,15 @@
     name:
       - openssh-server
       - openvpn
-      - firefox
+      - firefox-esr
       - hplip
       - tlp
       - fail2ban
       - ffmpeg
-      - ubuntu-restricted-extras
       - qt5-style-plugins
       - gstreamer1.0-plugins-ugly
       - gstreamer1.0-plugins-bad
       - gstreamer1.0-plugins-good
-      - pamixer
       - discount
       - libreoffice
       - keepassxc
@@ -199,14 +165,7 @@
       - silversearcher-ag
       - xterm
       - mpg123
-      - google-chrome-stable
+      - chromium
       - youtube-dl
       - redshift
     state: present
-
-- name: disable apport
-  become: true
-  become_method: sudo
-  systemd:
-    name: apport
-    enabled: false
