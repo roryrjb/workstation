@@ -169,4 +169,7 @@
       - chromium
       - youtube-dl
       - redshift
+      - xfonts-terminus
+      - dconf-editor
+      - transmission-gtk
     state: present
