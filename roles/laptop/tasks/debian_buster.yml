@@ -78,6 +78,7 @@
       - subversion
       - adoptopenjdk-8-hotspot
       - s4cmd
+      - rhythmbox
     state: present
 
 - name: libs
