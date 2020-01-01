@@ -44,6 +44,7 @@
   file: state=directory path={{ item }}
   with_items:
     - /etc/X11/xorg.conf.d/
+    - /etc/udev/rules.d/
 
 - name: required config directories
   file: state=directory path={{ item }}
@@ -58,6 +59,7 @@
   copy: src={{ item.src }} dest={{ item.dest }}
   with_items:
     - {src: '{{ role_path }}/files/X/10-libinput.conf', dest: '/etc/X11/xorg.conf.d/10-libinput.conf'}
+    - {src: '{{ role_path }}/files/udev/rules.d/70-u2f.rules', dest: '/etc/udev/rules.d/70-u2f.rules'}
 
 - name: config files
   copy: src={{ item.src }} dest={{ item.dest }}
