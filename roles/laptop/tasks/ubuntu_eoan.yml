@@ -186,7 +186,7 @@
       - libreoffice
       - keepassxc
       - simple-scan
-      - aria2
+      - transmission-gtk
       - hplip
       - gimp
       - inkscape
@@ -198,10 +198,9 @@
       - irssi
       - silversearcher-ag
       - xterm
-      - mpg123
       - google-chrome-stable
       - youtube-dl
-      - redshift
+      - gitk
     state: present
 
 - name: disable apport

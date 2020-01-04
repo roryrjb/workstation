@@ -1,0 +1,28 @@
+- name: update gnome dconf settings
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name', value: "'xterm'"}
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding', value: "'<Primary><Alt>t'"}
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command', value: "'xterm'"}
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name', value: "'Mute/Unmute Microphone'"}
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding', value: "'<Primary><Alt>m'"}
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command', value: "'/home/rory/.local/bin/mic_toggle'"}
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings', value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"}
+    - {key: '/org/gnome/desktop/input-sources/xkb-options', value: "['caps:ctrl_modifier']"}
+    - {key: '/org/gnome/desktop/interface/clock-show-date', value: 'true'}
+    - {key: '/org/gnome/desktop/interface/cursor-blink', value: 'false'}
+    - {key: '/org/gnome/desktop/privacy/old-files-age', value: 'uint32 7'}
+    - {key: '/org/gnome/desktop/privacy/remove-old-trash-files', value: 'true'}
+    - {key: '/org/gnome/desktop/privacy/report-technical-problems', value: 'false'}
+    - {key: '/org/gnome/desktop/search-providers/disable-external', value: 'false'}
+    - {key: '/org/gnome/desktop/wm/preferences/audible-bell', value: 'false'}
+    - {key: '/org/gnome/desktop/wm/preferences/focus-mode', value: "'click'"}
+    - {key: '/org/gnome/settings-daemon/plugins/color/night-light-enabled', value: 'true'}
+    - {key: '/org/gnome/settings-daemon/plugins/xsettings/antialiasing', value: "'rgba'"}
+    - {key: '/org/gnome/mutter/center-new-windows', value: 'true'}
+    - {key: '/org/gnome/shell/extensions/dash-to-dock/click-action', value: '"minimize"'}
+    - {key: '/org/gnome/terminal/legacy/default-show-menubar', value: "false"}
+    - {key: '/org/gnome/settings-daemon/plugins/power/power-button-action', value: "'suspend'"}
+    - {key: '/org/gnome/desktop/peripherals/trackball/scroll-wheel-emulation-button', value: '8'}
