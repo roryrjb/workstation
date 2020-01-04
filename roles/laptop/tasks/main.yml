@@ -20,6 +20,7 @@
     extra_args: --user
   loop:
     - vim-vint
+    - 2to3
 
 - name: npm packages
   npm:
@@ -52,6 +53,7 @@
     - '{{ ansible_env.HOME }}/.config/yamllint'
     - '{{ ansible_env.HOME }}/.config/htop'
     - '{{ ansible_env.HOME }}/.config/fontconfig'
+    - '{{ ansible_env.HOME }}/.config/pulse'
 
 - name: system config files
   become: true
@@ -70,8 +72,10 @@
     - {src: '{{ role_path }}/files/.bashrc', dest: '{{ ansible_env.HOME }}/.bashrc'}
     - {src: '{{ role_path }}/files/.bash_profile', dest: '{{ ansible_env.HOME }}/.bash_profile'}
     - {src: '{{ role_path }}/files/.Xresources', dest: '{{ ansible_env.HOME }}/.Xresources'}
+    - {src: '{{ role_path }}/files/.xinitrc', dest: '{{ ansible_env.HOME }}/.xinitrc'}
     - {src: '{{ role_path }}/files/.ansible.cfg', dest: '{{ ansible_env.HOME }}/.ansible.cfg'}
     - {src: '{{ role_path }}/files/.config/redshift.conf', dest: '{{ ansible_env.HOME }}/.config/redshift.conf'}
     - {src: '{{ role_path }}/files/.config/yamllint/config', dest: '{{ ansible_env.HOME }}/.config/yamllint/config'}
     - {src: '{{ role_path }}/files/.config/htop/htoprc', dest: '{{ ansible_env.HOME }}/.config/htop/htoprc'}
     - {src: '{{ role_path }}/files/.config/fontconfig/fonts.conf', dest: '{{ ansible_env.HOME }}/.config/fontconfig/fonts.conf'}
+    - {src: '{{ role_path }}/files/.config/pulse/daemon.conf', dest: '{{ ansible_env.HOME }}/.config/pulse/daemon.conf'}

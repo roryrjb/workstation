@@ -92,8 +92,6 @@
       - isync
       - xterm
       - xorg-xfontsel
-      - tamsyn-font
-      - terminus-font
       - simplescreenrecorder
     state: present
 
