@@ -13,6 +13,14 @@
       QT_PLATFORMTHEME=gtk2
       QT_AUTO_SCREEN_SCALE_FACTOR=0
 
+- name: python2 packages
+  pip:
+    name: "{{ item }}"
+    executable: pip2
+    extra_args: --user
+  loop:
+    - psutil
+
 - name: python3 packages
   pip:
     name: "{{ item }}"
