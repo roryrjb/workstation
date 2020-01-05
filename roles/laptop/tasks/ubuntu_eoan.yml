@@ -201,6 +201,8 @@
       - google-chrome-stable
       - youtube-dl
       - gitk
+      - exfat-fuse
+      - exfat-utils
     state: present
 
 - name: disable apport
