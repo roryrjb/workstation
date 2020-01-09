@@ -78,7 +78,7 @@
       - subversion
       - adoptopenjdk-8-hotspot
       - s4cmd
-      - rhythmbox
+      - devscripts
     state: present
 
 - name: libs
@@ -171,4 +171,6 @@
       - redshift
       - dconf-editor
       - transmission-gtk
+      - gitg
+      - rhythmbox
     state: present
