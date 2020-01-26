@@ -1,0 +1,49 @@
+- name: adoptjdk
+  homebrew_tap:
+    name: AdoptOpenJDK/openjdk
+
+- name: dev packages
+  homebrew:
+    name:
+      - shellcheck
+      # - valgrind
+      - gdb
+      - ctags
+      - cscope
+      - pygments
+      - meson
+      - ninja
+      - cmake
+      - pandoc
+      - bison
+      - flex
+      - bc
+      - m4
+      - texinfo
+      - jq
+      - imagemagick
+      - luajit
+      - clang-format
+      - minisign
+      - docker-compose
+      - yamllint
+      - asciinema
+      - meson
+    state: present
+
+- name: casks
+  homebrew_cask:
+    name:
+      - adoptopenjdk8
+
+- name: packages
+  homebrew:
+    name:
+      - ffmpeg
+      - discount
+      - isync
+      - mutt
+      - newsboat
+      - irssi
+      - the_silver_searcher
+    state: present

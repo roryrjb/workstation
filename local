@@ -2,5 +2,7 @@
 localhost ansible_connection=local
 
 [all:vars]
-release=buster
-distro=debian
+release=catalina
+distro=macos
+platform=darwin
+arch=amd64

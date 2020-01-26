@@ -1,15 +1,7 @@
 - name: laptop
   include: "{{ distro }}_{{ release }}.yml"
 
-- name: python2 packages
-  pip:
-    name: "{{ item }}"
-    executable: pip2
-    extra_args: --user
-  loop:
-    - psutil
-
-- name: python3 packages
+- name: python packages
   pip:
     name: "{{ item }}"
     executable: pip3
@@ -17,20 +9,16 @@
   loop:
     - vim-vint
     - 2to3
+    - black
+    - isort
+    - flake8
+    - virtualenv
+    - poetry
 
 - name: npm packages
   npm:
     name: "{{ item }}"
     global: true
   with_items:
-    - st
     - standard
     - csslint
-
-- name: ufw deny all
-  become: true
-  become_method: sudo
-  ufw:
-    state: enabled
-    policy: deny
-    direction: incoming
