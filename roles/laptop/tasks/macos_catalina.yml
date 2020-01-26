@@ -46,4 +46,6 @@
       - newsboat
       - irssi
       - the_silver_searcher
+      - neofetch
+      - neovim
     state: present
