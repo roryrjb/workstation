@@ -1,17 +1,21 @@
 - name: laptop
   include: "{{ distro }}_{{ release }}.yml"
 
-- name: python packages
+- name: python 2 packages
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+    extra_args: --user
+  loop:
+    - gsutil
+
+- name: python 3 packages
   pip:
     name: "{{ item }}"
     executable: pip3
     extra_args: --user
   loop:
     - vim-vint
-    - 2to3
-    - black
-    - isort
-    - flake8
     - virtualenv
     - poetry
 

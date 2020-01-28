@@ -48,4 +48,11 @@
       - the_silver_searcher
       - neofetch
       - neovim
+      - watch
+    state: present
+
+- name: packages
+  homebrew_cask:
+    name:
+      - kubecontext
     state: present
