@@ -2,7 +2,7 @@
 localhost ansible_connection=local
 
 [all:vars]
-release=catalina
-distro=macos
-platform=darwin
+release=bionic
+distro=ubuntu
+platform=linux
 arch=amd64
