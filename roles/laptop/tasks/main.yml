@@ -4,7 +4,7 @@
 - name: python 2 packages
   pip:
     name: "{{ item }}"
-    executable: pip3
+    executable: pip-2.7
     extra_args: --user
   loop:
     - gsutil
@@ -12,12 +12,13 @@
 - name: python 3 packages
   pip:
     name: "{{ item }}"
-    executable: pip3
+    executable: pip-3.7
     extra_args: --user
   loop:
     - vim-vint
     - virtualenv
     - poetry
+    - yamllint
 
 - name: npm packages
   npm:

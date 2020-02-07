@@ -3,5 +3,5 @@
     - common
     - kubernetes
     - mysql_client
-    - nodejs
+    # - nodejs
     - laptop

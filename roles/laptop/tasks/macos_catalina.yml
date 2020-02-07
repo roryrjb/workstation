@@ -1,16 +1,18 @@
-- name: adoptjdk
-  homebrew_tap:
-    name: AdoptOpenJDK/openjdk
-
 - name: dev packages
-  homebrew:
-    name:
+  become: yes
+  become_method: sudo
+  macports:
+    name: "{{ ports }}"
+  vars:
+    ports:
       - shellcheck
       # - valgrind
       - gdb
       - ctags
       - cscope
-      - pygments
+      - py-pygments
+      - py27-pip
+      - py37-pip
       - meson
       - ninja
       - cmake
@@ -21,38 +23,28 @@
       - m4
       - texinfo
       - jq
-      - imagemagick
       - luajit
-      - clang-format
+      - clang-9.0
       - minisign
       - docker-compose
-      - yamllint
       - asciinema
       - meson
+      - openjdk8
     state: present
 
-- name: casks
-  homebrew_cask:
-    name:
-      - adoptopenjdk8
-
 - name: packages
-  homebrew:
-    name:
+  become: yes
+  become_method: sudo
+  macports:
+    name: "{{ ports }}"
+  vars:
+    ports:
       - ffmpeg
-      - discount
       - isync
-      - mutt
+      - neomutt
       - newsboat
       - irssi
       - the_silver_searcher
       - neofetch
-      - neovim
       - watch
-    state: present
-
-- name: packages
-  homebrew_cask:
-    name:
-      - kubecontext
     state: present
