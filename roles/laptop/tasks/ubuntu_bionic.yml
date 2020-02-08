@@ -6,6 +6,7 @@
     state: present
   loop:
     - "https://dl.google.com/linux/linux_signing_key.pub"
+    - "https://download.spotify.com/debian/pubkey.gpg"
 
 - name: add repos
   become: true
@@ -19,6 +20,7 @@
     - "ppa:dysfunctionalprogramming/oksh"
     - "ppa:dysfunctionalprogramming/minisign"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    - "deb http://repository.spotify.com stable non-free"
 
 - name: remove packages
   become: true
@@ -34,6 +36,7 @@
       - onboard
       - magnus
       - evolution
+      - hexchat
     state: absent
 
 - name: dev packages
@@ -206,4 +209,6 @@
       - google-chrome-stable
       - youtube-dl
       - redshift
+      - hugo
+      - spotify-client
     state: present
