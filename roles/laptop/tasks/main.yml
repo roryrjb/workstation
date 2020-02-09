@@ -1,6 +1,12 @@
 - name: laptop
   include: "{{ distro }}_{{ release }}.yml"
 
+- name: python 2.7 pip
+  command: "python2.7 get-pip.py"
+
+- name: python 3.7 pip
+  command: "python3.7 get-pip.py"
+
 - name: python 2 packages
   pip:
     name: "{{ item }}"
