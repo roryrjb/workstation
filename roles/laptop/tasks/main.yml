@@ -25,6 +25,7 @@
     - virtualenv
     - poetry
     - yamllint
+    - pipenv
 
 - name: npm packages
   npm:
