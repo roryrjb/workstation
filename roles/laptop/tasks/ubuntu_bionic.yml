@@ -214,4 +214,5 @@
       - hugo
       - spotify-client
       - sublime-text
+      - sublime-merge
     state: present
