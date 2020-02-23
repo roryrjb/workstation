@@ -36,3 +36,4 @@
   with_items:
     - standard
     - csslint
+    - prettier
