@@ -110,6 +110,9 @@
       - subversion
       - git-extras
       - golang
+      - neovim
+      - neovim-qt
+      - python3-neovim
     state: present
 
 - name: libs
