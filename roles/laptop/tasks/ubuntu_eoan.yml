@@ -7,7 +7,6 @@
   loop:
     - "https://dl.google.com/linux/linux_signing_key.pub"
     - "https://download.spotify.com/debian/pubkey.gpg"
-    - "https://packages.gitlab.com/gitlab/gitlab-ee/gpgkey"
 
 - name: add repos
   become: true
@@ -22,7 +21,6 @@
     - "ppa:dysfunctionalprogramming/minisign"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb http://repository.spotify.com stable non-free"
-    - "deb https://packages.gitlab.com/gitlab/gitlab-ee/ubuntu/ bionic main"
 
 - name: remove packages
   become: true
@@ -46,7 +44,7 @@
   become_method: sudo
   apt:
     name:
-      - shellcheck
+      # - shellcheck (defer to docker image instead)
       - valgrind
       - gdb
       - rr
@@ -190,7 +188,6 @@
       - pamixer
       - discount
       - libreoffice
-      - keepassxc
       - simple-scan
       - transmission-gtk
       - hplip
@@ -210,10 +207,6 @@
       - hugo
       - spotify-client
       - mysql-workbench
-      - gitlab-ee
-      - postfix
-      - chrome-gnome-shell
-      - gnome-tweaks
     state: present
 
 - name: disable apport
