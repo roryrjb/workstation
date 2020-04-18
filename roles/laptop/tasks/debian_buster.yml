@@ -13,6 +13,8 @@
       - clang-format
       - virtualenv
       - yamllint
+      - libxml2-utils
+      - python3-venv
     state: present
 
 - name: packages
@@ -29,6 +31,7 @@
       - simple-scan
       - gimp
       - xsel
+      - xclip
       - mutt
       - newsboat
       - irssi
@@ -39,4 +42,5 @@
       - rhythmbox
       - mpv
       - qt5-style-plugins
+      - system-config-printer
     state: present
