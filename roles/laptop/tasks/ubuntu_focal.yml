@@ -42,6 +42,9 @@
       - clang-format
       #- minisign
       - s3cmd
+      - libreadline-dev
+      - libbz2-dev
+      - libsqlite3-dev
     state: present
 
 - name: packages
