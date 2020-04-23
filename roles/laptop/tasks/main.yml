@@ -9,7 +9,9 @@
 
 - name: pyenv
   shell: >
-    curl -o- https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+  args:
+    creates: "{{ ansible_env.HOME }}/.pyenv"
 
 - name: python 3 packages
   pip:
