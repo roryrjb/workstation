@@ -32,35 +32,16 @@
       - gdb
       - strace
       - universal-ctags
-      - cscope
-      - ninja-build
-      - cmake
-      - bison
-      - flex
-      - bc
       - m4
-      - xml-twig-tools
       - jq
-      - imagemagick
       - uuid-runtime
       - dnsutils
       - openjdk-8-jdk
       #- oksh
       - clang
       - clang-format
-      - clang-tidy
       #- minisign
-      - virtualenv
-      - pipenv
       - s3cmd
-      - flake8
-      - mypy
-      - mypy-doc
-      - python3-mypy
-      - yamllint
-      - asciinema
-      - meson
-      - golang
     state: present
 
 - name: packages
