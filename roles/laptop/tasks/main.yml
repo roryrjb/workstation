@@ -7,6 +7,10 @@
   args:
     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
+- name: pyenv
+  shell: >
+    curl -o- https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+
 - name: python 3 packages
   pip:
     name: "{{ item }}"
@@ -18,5 +22,3 @@
     - poetry
     - yamllint
     - pipenv
-    - isort==4.3.12
-    - black
