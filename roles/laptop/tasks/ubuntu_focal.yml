@@ -45,6 +45,7 @@
       - libreadline-dev
       - libbz2-dev
       - libsqlite3-dev
+      - golang
     state: present
 
 - name: packages
