@@ -61,33 +61,25 @@
       - fail2ban
       - ffmpeg
       - ubuntu-restricted-extras
-      - qt5-style-plugins
       - gstreamer1.0-plugins-ugly
       - gstreamer1.0-plugins-bad
       - gstreamer1.0-plugins-good
       #- pamixer
       - libreoffice
-      - simple-scan
-      - transmission-gtk
       - hplip
       - gimp
       - inkscape
-      - xsel
       - xclip
       - vlc
       - isync
-      - mutt
       - newsboat
       - irssi
-      - silversearcher-ag
       - google-chrome-stable
       - youtube-dl
       - hugo
       - spotify-client
       - keepassxc
       - obs-studio
-      - peek
-      - rxvt-unicode
     state: present
 
 - name: disable apport
