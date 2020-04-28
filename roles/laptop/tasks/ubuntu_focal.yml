@@ -7,6 +7,8 @@
   loop:
     - "https://dl.google.com/linux/linux_signing_key.pub"
     - "https://download.spotify.com/debian/pubkey.gpg"
+    - "https://packages.microsoft.com/keys/microsoft.asc"
+    - "https://download.sublimetext.com/sublimehq-pub.gpg"
 
 - name: add repos
   become: true
@@ -21,6 +23,8 @@
     #- "ppa:dysfunctionalprogramming/minisign"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb http://repository.spotify.com stable non-free"
+    - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+    - "deb https://download.sublimetext.com/ apt/stable/"
 
 - name: dev packages
   become: true
@@ -85,6 +89,9 @@
       - peek
       - kdenlive
       - steam
+      - sublime-text
+      - sublime-merge
+      - code
     state: present
 
 - name: disable apport
