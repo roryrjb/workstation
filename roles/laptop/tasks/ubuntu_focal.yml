@@ -75,11 +75,16 @@
       - newsboat
       - irssi
       - google-chrome-stable
+      - google-chrome-beta
+      - google-chrome-unstable
       - youtube-dl
       - hugo
       - spotify-client
       - keepassxc
       - obs-studio
+      - peek
+      - kdenlive
+      - steam
     state: present
 
 - name: disable apport
@@ -88,3 +93,11 @@
   systemd:
     name: apport
     enabled: false
+
+- name: ufw deny all
+  become: true
+  become_method: sudo
+  ufw:
+    state: enabled
+    policy: deny
+    direction: incoming
