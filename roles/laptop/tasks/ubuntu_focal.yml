@@ -7,8 +7,6 @@
   loop:
     - "https://dl.google.com/linux/linux_signing_key.pub"
     - "https://download.spotify.com/debian/pubkey.gpg"
-    - "https://packages.microsoft.com/keys/microsoft.asc"
-    - "https://download.sublimetext.com/sublimehq-pub.gpg"
 
 - name: add repos
   become: true
@@ -19,12 +17,10 @@
     codename: "{{ release }}"
   loop:
     #- "ppa:dysfunctionalprogramming/pamixer"
-    #- "ppa:dysfunctionalprogramming/oksh"
+    - "ppa:dysfunctionalprogramming/oksh"
     #- "ppa:dysfunctionalprogramming/minisign"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb http://repository.spotify.com stable non-free"
-    - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-    - "deb https://download.sublimetext.com/ apt/stable/"
 
 - name: dev packages
   become: true
@@ -41,7 +37,7 @@
       - uuid-runtime
       - dnsutils
       - openjdk-8-jdk
-      #- oksh
+      - oksh
       - clang
       - clang-format
       #- minisign
@@ -50,6 +46,8 @@
       - libbz2-dev
       - libsqlite3-dev
       - golang
+      - devscripts
+      - debhelper
     state: present
 
 - name: packages
@@ -74,7 +72,6 @@
       - gimp
       - inkscape
       - xclip
-      - vlc
       - isync
       - newsboat
       - irssi
@@ -89,9 +86,7 @@
       - peek
       - kdenlive
       - steam
-      - sublime-text
-      - sublime-merge
-      - code
+      - rxvt-unicode
     state: present
 
 - name: disable apport
