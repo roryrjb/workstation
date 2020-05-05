@@ -48,6 +48,8 @@
       - golang
       - devscripts
       - debhelper
+      - reprepro
+      - meson
     state: present
 
 - name: packages
@@ -75,9 +77,8 @@
       - isync
       - newsboat
       - irssi
+      - mutt
       - google-chrome-stable
-      - google-chrome-beta
-      - google-chrome-unstable
       - youtube-dl
       - hugo
       - spotify-client
@@ -86,7 +87,7 @@
       - peek
       - kdenlive
       - steam
-      - rxvt-unicode
+      # - rxvt-unicode
     state: present
 
 - name: disable apport
