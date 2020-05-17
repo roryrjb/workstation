@@ -4,16 +4,8 @@
 - name: pyenv
   shell: >
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-    pyenv install 3.7.7
-    pyenv global 3.7.7
   args:
     creates: "{{ ansible_env.HOME }}/.pyenv"
-
-- name: npm packages
-  npm: name={{ item }} executable="nvm exec npm" state=present
-  with_items:
-    - "prettier"
-    - "st"
 
 - name: python 3 packages
   pip:
