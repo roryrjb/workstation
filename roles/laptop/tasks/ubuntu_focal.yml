@@ -54,6 +54,7 @@
       - tidy
       - rf
       - perltidy
+      - certbot
     state: present
 
 - name: packages
@@ -90,6 +91,7 @@
       - kdenlive
       - rxvt-unicode
       - rhythmbox
+      - qt5-style-plugins
     state: present
 
 - name: disable apport
