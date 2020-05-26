@@ -19,18 +19,6 @@
     - yamllint
     - pipenv
 
-- name: environment variables
-  become: true
-  become_method: sudo
-  blockinfile:
-    name: /etc/environment
-    marker: "# {mark} ansible desktop"
-    block: |
-      QT_QPA_PLATFORMTHEME=gtk2
-      QT_PLATFORM_PLUGIN=gtk2
-      QT_PLATFORMTHEME=gtk2
-      QT_AUTO_SCREEN_SCALE_FACTOR=0
-
 - name: required config directories
   become: true
   become_method: sudo

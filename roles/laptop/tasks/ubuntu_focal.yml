@@ -55,6 +55,7 @@
       - rf
       - perltidy
       - certbot
+      - cmake
     state: present
 
 - name: packages
@@ -89,9 +90,7 @@
       - keepassxc
       - obs-studio
       - kdenlive
-      - rxvt-unicode
       - rhythmbox
-      - qt5-style-plugins
     state: present
 
 - name: disable apport
