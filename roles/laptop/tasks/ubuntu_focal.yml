@@ -16,7 +16,7 @@
     repo: "{{ item }}"
     codename: "{{ release }}"
   loop:
-    #- "ppa:dysfunctionalprogramming/pamixer"
+    - "ppa:dysfunctionalprogramming/pamixer"
     - "ppa:dysfunctionalprogramming/oksh"
     - "ppa:dysfunctionalprogramming/minisign"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
@@ -73,7 +73,7 @@
       - gstreamer1.0-plugins-ugly
       - gstreamer1.0-plugins-bad
       - gstreamer1.0-plugins-good
-      #- pamixer
+      - pamixer
       - libreoffice
       - hplip
       - gimp
