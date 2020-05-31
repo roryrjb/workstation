@@ -84,13 +84,13 @@
       - irssi
       - mutt
       - google-chrome-stable
-      - google-chrome-beta
       - youtube-dl
       - hugo
       - keepassxc
       - obs-studio
       - kdenlive
       - rhythmbox
+      - rxvt-unicode
     state: present
 
 - name: disable apport
