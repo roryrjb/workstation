@@ -18,7 +18,7 @@
   loop:
     #- "ppa:dysfunctionalprogramming/pamixer"
     - "ppa:dysfunctionalprogramming/oksh"
-    #- "ppa:dysfunctionalprogramming/minisign"
+    - "ppa:dysfunctionalprogramming/minisign"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb [arch=amd64] https://dysfunctionalprogramming.com/deb/ focal main"
 
@@ -41,7 +41,7 @@
       - clang
       - clang-format
       - clang-tidy
-      #- minisign
+      - minisign
       - s3cmd
       - libreadline-dev
       - libbz2-dev
