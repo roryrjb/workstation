@@ -91,6 +91,8 @@
       - kdenlive
       - rhythmbox
       - rxvt-unicode
+      - chrome-gnome-shell
+      - gnome-tweaks
     state: present
 
 - name: disable apport
