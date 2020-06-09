@@ -95,10 +95,8 @@
       - keepassxc
       - obs-studio
       - kdenlive
-      - rhythmbox
+      - cmus
       - rxvt-unicode
-      - chrome-gnome-shell
-      - gnome-tweaks
       - qt5-style-plugins
       - spotify-client
     state: present
