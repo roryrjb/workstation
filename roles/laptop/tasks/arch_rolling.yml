@@ -28,6 +28,8 @@
       - jdk8-openjdk
       - afl
       - afl-utils
+      - virtualbox
+      - go
     state: present
 
 - name: libs
@@ -78,21 +80,20 @@
       - noto-fonts-emoji
       - gimp
       - xsel
-      - vlc
+      - xclip
       - mutt
       - perl-authen-sasl
       - perl-net-smtp-ssl
       - perl-mime-tools
       - newsboat
       - aria2
-      - redshift
       - irssi
       - man-pages
       - man-db
       - isync
-      - xterm
-      - xorg-xfontsel
-      - simplescreenrecorder
+      - obs-studio
+      - kdenlive
+      - peek
     state: present
 
 - name: aur
@@ -100,3 +101,5 @@
     use: yay
     name:
       - zoom
+      - qt5-styleplugins
+      - spotify

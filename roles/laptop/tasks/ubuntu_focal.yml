@@ -95,10 +95,11 @@
       - keepassxc
       - obs-studio
       - kdenlive
-      - cmus
+      - rhythmbox
       - rxvt-unicode
       - qt5-style-plugins
       - spotify-client
+      - virtualbox
     state: present
 
 - name: disable apport
