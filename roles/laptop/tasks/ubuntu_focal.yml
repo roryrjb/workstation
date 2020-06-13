@@ -21,7 +21,7 @@
     - "ppa:dysfunctionalprogramming/oksh"
     - "ppa:dysfunctionalprogramming/minisign"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-    - "deb [arch=amd64] https://dysfunctionalprogramming.com/deb/ focal main"
+    - "deb [arch=amd64] https://dysfunctionalprogramming.com/deb/ {{ release }} main"
     - "deb http://repository.spotify.com stable non-free"
 
 - name: dev packages
