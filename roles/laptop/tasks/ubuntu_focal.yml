@@ -66,6 +66,7 @@
       - libjpeg-dev
       - uchardet
       - liblzma-dev
+      - bpftrace
     state: present
 
 - name: packages
