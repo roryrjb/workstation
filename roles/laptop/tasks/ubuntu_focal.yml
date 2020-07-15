@@ -5,7 +5,9 @@
     url: "{{ item }}"
     state: present
   loop:
+    - "https://dl.google.com/linux/linux_signing_key.pub"
     - "https://dysfunctionalprogramming.com/public/keys/0x23A72C050145EFA8.pub"
+    - "https://download.spotify.com/debian/pubkey.gpg"
 
 - name: add repos
   become: true
@@ -18,7 +20,9 @@
     - "ppa:dysfunctionalprogramming/pamixer"
     - "ppa:dysfunctionalprogramming/oksh"
     - "ppa:dysfunctionalprogramming/minisign"
+    - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb [arch=amd64] https://dysfunctionalprogramming.com/deb/ {{ release }} main"
+    - "deb http://repository.spotify.com stable non-free"
 
 - name: dev packages
   become: true
@@ -100,6 +104,8 @@
       - transmission-gtk
       - virtualbox
       - peek
+      - spotify-client
+      - google-chrome-stable
     state: present
 
 - name: ufw deny all
