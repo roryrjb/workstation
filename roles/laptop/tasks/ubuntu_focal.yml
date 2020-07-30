@@ -6,7 +6,6 @@
     state: present
   loop:
     - "https://dl.google.com/linux/linux_signing_key.pub"
-    - "https://dysfunctionalprogramming.com/public/keys/0x23A72C050145EFA8.pub"
     - "https://download.spotify.com/debian/pubkey.gpg"
 
 - name: add repos
@@ -17,11 +16,7 @@
     repo: "{{ item }}"
     codename: "{{ release }}"
   loop:
-    - "ppa:dysfunctionalprogramming/pamixer"
-    - "ppa:dysfunctionalprogramming/oksh"
-    - "ppa:dysfunctionalprogramming/minisign"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-    - "deb [arch=amd64] https://dysfunctionalprogramming.com/deb/ {{ release }} main"
     - "deb http://repository.spotify.com stable non-free"
 
 - name: dev packages
@@ -40,11 +35,9 @@
       - uuid-runtime
       - dnsutils
       - openjdk-8-jdk
-      - oksh
       - clang
       - clang-format
       - clang-tidy
-      - minisign
       - s3cmd
       - libreadline-dev
       - libbz2-dev
@@ -55,7 +48,6 @@
       - reprepro
       - meson
       - tidy
-      - rf
       - perltidy
       - certbot
       - cmake
@@ -84,7 +76,6 @@
       - gstreamer1.0-plugins-ugly
       - gstreamer1.0-plugins-bad
       - gstreamer1.0-plugins-good
-      - pamixer
       - libreoffice
       - hplip
       - gimp
@@ -100,13 +91,12 @@
       - obs-studio
       - kdenlive
       - rhythmbox
-      - rxvt-unicode
       - qt5-style-plugins
       - transmission-gtk
-      - virtualbox
       - peek
       - spotify-client
       - google-chrome-stable
+      - fish
     state: present
 
 - name: ufw deny all
