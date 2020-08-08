@@ -16,6 +16,9 @@
     repo: "{{ item }}"
     codename: "{{ release }}"
   loop:
+    - "ppa:dysfunctionalprogramming/pamixer"
+    - "ppa:dysfunctionalprogramming/oksh"
+    - "ppa:dysfunctionalprogramming/minisign"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb http://repository.spotify.com stable non-free"
 
@@ -38,6 +41,7 @@
       - clang
       - clang-format
       - clang-tidy
+      - minisign
       - s3cmd
       - libreadline-dev
       - libbz2-dev
@@ -66,6 +70,7 @@
   become_method: sudo
   apt:
     name:
+      - oksh
       - openssh-server
       - openvpn
       - firefox
@@ -76,6 +81,7 @@
       - gstreamer1.0-plugins-ugly
       - gstreamer1.0-plugins-bad
       - gstreamer1.0-plugins-good
+      - pamixer
       - libreoffice
       - hplip
       - gimp
@@ -84,7 +90,6 @@
       - isync
       - newsboat
       - irssi
-      - mutt
       - youtube-dl
       - hugo
       - keepassxc
@@ -96,7 +101,6 @@
       - peek
       - spotify-client
       - google-chrome-stable
-      - fish
     state: present
 
 - name: ufw deny all
