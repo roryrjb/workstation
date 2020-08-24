@@ -17,60 +17,14 @@
     codename: "{{ release }}"
   loop:
     - "ppa:dysfunctionalprogramming/pamixer"
-    - "ppa:dysfunctionalprogramming/oksh"
-    - "ppa:dysfunctionalprogramming/minisign"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb http://repository.spotify.com stable non-free"
-
-- name: dev packages
-  become: true
-  become_method: sudo
-  apt:
-    name:
-      - shellcheck
-      - valgrind
-      - gdb
-      - lldb
-      - strace
-      - universal-ctags
-      - m4
-      - jq
-      - uuid-runtime
-      - dnsutils
-      - openjdk-8-jdk
-      - clang
-      - clang-format
-      - clang-tidy
-      - minisign
-      - s3cmd
-      - libreadline-dev
-      - libbz2-dev
-      - libsqlite3-dev
-      - golang
-      - devscripts
-      - debhelper
-      - reprepro
-      - meson
-      - tidy
-      - perltidy
-      - certbot
-      - cmake
-      - flex
-      - bison
-      - libelf-dev
-      - libcurl4-openssl-dev
-      - libjpeg-dev
-      - uchardet
-      - liblzma-dev
-      - bpftrace
-    state: present
 
 - name: packages
   become: true
   become_method: sudo
   apt:
     name:
-      - oksh
       - openssh-server
       - openvpn
       - firefox
@@ -88,6 +42,8 @@
       - inkscape
       - xclip
       - isync
+      - mutt
+      - notmuch
       - newsboat
       - irssi
       - youtube-dl
@@ -101,6 +57,12 @@
       - peek
       - spotify-client
       - google-chrome-stable
+      - google-chrome-beta
+      - appmenu-gtk2-module
+      - gnome-tweaks
+      - wireshark
+      - gphoto2
+      - v4l2loopback-dkms
     state: present
 
 - name: ufw deny all

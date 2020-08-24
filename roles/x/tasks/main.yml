@@ -1,23 +1,6 @@
 - name: laptop
   include: "{{ distro }}_{{ release }}.yml"
 
-- name: pyenv
-  shell: >
-    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-  args:
-    creates: "{{ ansible_env.HOME }}/.pyenv"
-
-- name: python 3 packages
-  pip:
-    name: "{{ item }}"
-    executable: pip3
-    extra_args: --user
-  loop:
-    - vim-vint
-    - virtualenv
-    - yamllint
-    - pipenv
-
 - name: required config directories
   become: true
   become_method: sudo

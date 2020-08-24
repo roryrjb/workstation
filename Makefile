@@ -1,5 +1,5 @@
-laptop:
-	ansible-playbook --ask-become-pass -l localhost -i local laptop.yml
+ubuntu:
+	ansible-playbook --ask-become-pass -l localhost -i local ubuntu.yml
 
-server:
-	ansible-playbook -i remote server.yml
+wsl:
+	ansible-playbook --ask-become-pass -l localhost -i local wsl.yml

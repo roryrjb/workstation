@@ -2,8 +2,7 @@
   roles:
     - common
     - kubernetes
-    - docker
     - mysql_client
     - nodejs
     - python
-    - laptop
+    - dev

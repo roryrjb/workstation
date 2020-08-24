@@ -1,0 +1,54 @@
+- name: add repos
+  become: true
+  become_method: sudo
+  apt_repository:
+    state: present
+    repo: "{{ item }}"
+    codename: "{{ release }}"
+  loop:
+    - "ppa:dysfunctionalprogramming/oksh"
+    - "ppa:dysfunctionalprogramming/minisign"
+
+- name: dev packages
+  become: true
+  become_method: sudo
+  apt:
+    name:
+      - shellcheck
+      - valgrind
+      - gdb
+      - lldb
+      - strace
+      - universal-ctags
+      - m4
+      - jq
+      - uuid-runtime
+      - dnsutils
+      - clang
+      - clang-format
+      - clang-tidy
+      - minisign
+      - s3cmd
+      - libreadline-dev
+      - libbz2-dev
+      - libsqlite3-dev
+      - golang
+      - devscripts
+      - debhelper
+      - reprepro
+      - meson
+      - tidy
+      - perltidy
+      - certbot
+      - cmake
+      - flex
+      - bison
+      - libelf-dev
+      - libcurl4-openssl-dev
+      - libjpeg-dev
+      - uchardet
+      - liblzma-dev
+      - bpftrace
+      - bmake
+      - oksh
+    state: present
