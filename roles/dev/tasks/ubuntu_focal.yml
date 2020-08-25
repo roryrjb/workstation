@@ -51,4 +51,10 @@
       - bpftrace
       - bmake
       - oksh
+      - xvfb
+      - libxcursor1
+      - libnss3
+      - libgdk-pixbuf2.0-0
+      - libgtk-3-0
+      - libxss1
     state: present
