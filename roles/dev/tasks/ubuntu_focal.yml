@@ -57,4 +57,7 @@
       - libgdk-pixbuf2.0-0
       - libgtk-3-0
       - libxss1
+      - ldc
+      - gdc
+      - ats2-lang
     state: present
