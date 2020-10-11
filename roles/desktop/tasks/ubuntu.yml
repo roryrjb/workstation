@@ -6,7 +6,7 @@
     state: present
   loop:
     - "https://dl.google.com/linux/linux_signing_key.pub"
-    - "https://download.spotify.com/debian/pubkey.gpg"
+    - "https://download.spotify.com/debian/pubkey_0D811D58.gpg"
 
 - name: add repos
   become: true
@@ -44,14 +44,12 @@
       - xclip
       - isync
       - mutt
-      - notmuch
       - newsboat
       - irssi
       - youtube-dl
       - hugo
       - keepassxc
       - obs-studio
-      - kdenlive
       - rhythmbox
       - qt5-style-plugins
       - peek
@@ -62,9 +60,17 @@
       - gphoto2
       - v4l2loopback-dkms
       - brasero
-      - xterm
       - rxvt-unicode
       - virtualbox
+      - ttf-mscorefonts-installer
+      - ubuntu-restricted-extras
+      - vlc
+      - zim
+      - xfonts-unifont
+      - transmission-gtk
+      - redshift
+      - dconf-editor
+      - gnome-disk-utility
     state: present
 
 - name: ufw deny all
