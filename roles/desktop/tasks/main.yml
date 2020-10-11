@@ -1,5 +1,5 @@
 - name: laptop
-  include: "{{ distro }}_{{ release }}.yml"
+  include: "{{ distro }}.yml"
 
 - name: required config directories
   become: true

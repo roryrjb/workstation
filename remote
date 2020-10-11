@@ -1,9 +1,0 @@
-[all]
-blah
-
-[all:vars]
-ansible_user=ubuntu
-release=focal
-distro=ubuntu
-platform=linux
-arch=amd64

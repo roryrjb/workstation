@@ -1,8 +1,0 @@
-- hosts: all
-  roles:
-    - common
-    - kubernetes
-    - mysql_client
-    - nodejs
-    - python
-    - dev
