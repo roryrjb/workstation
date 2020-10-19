@@ -16,7 +16,6 @@
     repo: "{{ item }}"
     codename: "{{ release }}"
   loop:
-    - "ppa:dysfunctionalprogramming/pamixer"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb http://repository.spotify.com stable non-free"
 
@@ -28,7 +27,6 @@
     name:
       - openssh-server
       - openvpn
-      - firefox
       - hplip
       - tlp
       - fail2ban
@@ -36,22 +34,16 @@
       - gstreamer1.0-plugins-ugly
       - gstreamer1.0-plugins-bad
       - gstreamer1.0-plugins-good
-      - pamixer
       - libreoffice
       - hplip
       - gimp
-      - inkscape
       - xclip
       - isync
       - mutt
-      - newsboat
-      - irssi
       - youtube-dl
       - hugo
-      - keepassxc
       - obs-studio
       - rhythmbox
-      - qt5-style-plugins
       - peek
       - spotify-client
       - google-chrome-stable
@@ -59,18 +51,10 @@
       - wireshark
       - gphoto2
       - v4l2loopback-dkms
-      - brasero
-      - rxvt-unicode
-      - virtualbox
       - ttf-mscorefonts-installer
       - ubuntu-restricted-extras
-      - vlc
-      - zim
-      - xfonts-unifont
       - transmission-gtk
       - redshift
-      - dconf-editor
-      - gnome-disk-utility
     state: present
 
 - name: ufw deny all
