@@ -54,7 +54,7 @@
       - ttf-mscorefonts-installer
       - ubuntu-restricted-extras
       - transmission-gtk
-      - redshift
+      - vlc
     state: present
 
 - name: ufw deny all
