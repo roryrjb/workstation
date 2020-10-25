@@ -55,6 +55,7 @@
       - ubuntu-restricted-extras
       - transmission-gtk
       - vlc
+      - qt5-style-plugins
     state: present
 
 - name: ufw deny all
