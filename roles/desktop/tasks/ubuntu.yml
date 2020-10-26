@@ -39,6 +39,7 @@
       - gimp
       - xclip
       - isync
+      - irssi
       - mutt
       - youtube-dl
       - hugo
@@ -56,6 +57,7 @@
       - transmission-gtk
       - vlc
       - qt5-style-plugins
+      - python3-psutil
     state: present
 
 - name: ufw deny all
