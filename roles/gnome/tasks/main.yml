@@ -7,3 +7,18 @@
     - {key: '/org/gnome/desktop/wm/preferences/audible-bell', value: 'false'}
     - {key: '/org/gnome/settings-daemon/plugins/color/night-light-enabled', value: 'true'}
     - {key: '/org/gnome/desktop/peripherals/trackball/scroll-wheel-emulation-button', value: '4'}
+    - {key: '/com/uploadedlobster/peek/persist-window-geometry', value: '(144, 188, 500, 300)'}
+    - {key: '/com/uploadedlobster/peek/recording-framerate', value: '15'}
+    - {key: '/com/uploadedlobster/peek/recording-start-delay', value: '1'}
+    - {key: '/org/gnome/desktop/interface/gtk-theme', value: '"Yaru-dark"'}
+    - {key: '/org/gnome/desktop/interface/monospace-font-name', value: '"Liberation Mono 10"'}
+    - {key: '/org/gnome/desktop/peripherals/touchpad/two-finger-scrolling-enabled', value: 'true'}
+    - {key: '/org/gnome/rhythmbox/rhythmdb/locations', value: '["file:///slowdata/Music"]'}
+    - {key: '/org/gnome/rhythmbox/rhythmdb/monitor-library', value: 'true'}
+    - {key: '/org/gnome/rhythmbox/sources/browser-views', value: '"genres-artists-albums"'}
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/mic-mute', value: '["<Primary><Alt>m"]'}
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/next', value: '["<Primary><Alt>n"]'}
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/play', value: '["<Primary><Alt>p"]'}
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/previous', value: '["<Primary><Shift><Alt>n"]'}
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/volume-down', value: '["<Primary><Alt>y"]'}
+    - {key: '/org/gnome/settings-daemon/plugins/media-keys/volume-up', value: '["<Primary><Alt>u"]'}
