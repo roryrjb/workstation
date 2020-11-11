@@ -52,13 +52,8 @@
       - wireshark
       - gphoto2
       - v4l2loopback-dkms
-      - ttf-mscorefonts-installer
-      - ubuntu-restricted-extras
       - transmission-gtk
       - vlc
-      - qt5-style-plugins
-      - gnome-shell-extensions
-      - gnome-tweaks
     state: present
 
 - name: ufw deny all
