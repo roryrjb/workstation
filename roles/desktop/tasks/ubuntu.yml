@@ -54,6 +54,8 @@
       - v4l2loopback-dkms
       - transmission-gtk
       - vlc
+      - kitty
+      - screenkey
     state: present
 
 - name: ufw deny all
