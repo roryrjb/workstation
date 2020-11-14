@@ -60,4 +60,6 @@
       - libgit2-dev
       - libx11-dev
       - fzf
+      - scdoc
+      - mycli
     state: present

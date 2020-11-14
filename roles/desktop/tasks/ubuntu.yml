@@ -39,8 +39,8 @@
       - gimp
       - xclip
       - isync
-      - irssi
       - mutt
+      - irssi
       - youtube-dl
       - hugo
       - obs-studio
@@ -52,12 +52,10 @@
       - wireshark
       - gphoto2
       - v4l2loopback-dkms
-      - ttf-mscorefonts-installer
-      - ubuntu-restricted-extras
       - transmission-gtk
       - vlc
-      - qt5-style-plugins
-      - python3-psutil
+      - kitty
+      - screenkey
     state: present
 
 - name: ufw deny all
