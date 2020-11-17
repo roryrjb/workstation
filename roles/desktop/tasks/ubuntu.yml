@@ -48,14 +48,12 @@
       - peek
       - spotify-client
       - google-chrome-stable
-      - google-chrome-beta
       - wireshark
       - gphoto2
       - v4l2loopback-dkms
       - transmission-gtk
       - vlc
       - kitty
-      - screenkey
     state: present
 
 - name: ufw deny all
