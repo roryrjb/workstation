@@ -61,6 +61,7 @@
       - vlc
       - neovim
       - qt5-style-plugins
+      - kitty
     state: present
 
 - name: ufw deny all
