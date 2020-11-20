@@ -27,6 +27,8 @@
       - clang
       - clang-format
       - clang-tidy
+      - clangd
+      - bear
       - minisign
       - s3cmd
       - libreadline-dev
