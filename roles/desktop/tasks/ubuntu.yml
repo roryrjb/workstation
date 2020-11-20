@@ -16,8 +16,10 @@
     repo: "{{ item }}"
     codename: "{{ release }}"
   loop:
+    - "ppa:dysfunctionalprogramming/pamixer"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb http://repository.spotify.com stable non-free"
+    - "ppa:neovim-ppa/unstable"
 
 - name: packages
   become: true
@@ -25,6 +27,7 @@
   apt:
     install_recommends: no
     name:
+      - pamixer
       - openssh-server
       - openvpn
       - hplip
@@ -53,6 +56,8 @@
       - v4l2loopback-dkms
       - transmission-gtk
       - vlc
+      - neovim
+      - qt5-style-plugins
     state: present
 
 - name: ufw deny all
