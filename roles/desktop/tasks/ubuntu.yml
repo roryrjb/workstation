@@ -7,7 +7,7 @@
   loop:
     - "https://dl.google.com/linux/linux_signing_key.pub"
     - "https://download.spotify.com/debian/pubkey_0D811D58.gpg"
-    - "https://brave-browser-apt-release.s3.brave.com/brave-core.asc"
+    - "https://packages.microsoft.com/keys/microsoft.asc"
 
 - name: add repos
   become: true
@@ -19,7 +19,7 @@
   loop:
     - "ppa:dysfunctionalprogramming/pamixer"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-    - "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"
+    - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
     - "deb http://repository.spotify.com stable non-free"
     - "ppa:neovim-ppa/unstable"
 
@@ -43,9 +43,6 @@
       - hplip
       - gimp
       - xclip
-      - isync
-      - mutt
-      - irssi
       - youtube-dl
       - hugo
       - obs-studio
@@ -53,7 +50,8 @@
       - peek
       - spotify-client
       - google-chrome-stable
-      - brave-browser
+      - google-chrome-beta
+      - code
       - wireshark
       - gphoto2
       - v4l2loopback-dkms
@@ -62,6 +60,8 @@
       - neovim
       - qt5-style-plugins
       - kitty
+      - thunderbird
+      - hexchat
     state: present
 
 - name: ufw deny all
