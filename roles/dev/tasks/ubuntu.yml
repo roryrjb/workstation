@@ -65,4 +65,7 @@
       - fzf
       - scdoc
       - mycli
+      - qemu
+      - qemu-kvm
+      - qemu-system
     state: present
