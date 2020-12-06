@@ -7,7 +7,6 @@
   loop:
     - "https://dl.google.com/linux/linux_signing_key.pub"
     - "https://download.spotify.com/debian/pubkey_0D811D58.gpg"
-    - "https://download.sublimetext.com/sublimehq-pub.gpg"
 
 - name: add repos
   become: true
@@ -20,7 +19,6 @@
     - "ppa:dysfunctionalprogramming/pamixer"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb http://repository.spotify.com stable non-free"
-    - "deb https://download.sublimetext.com/ apt/stable/"
     - "ppa:neovim-ppa/unstable"
 
 - name: packages
@@ -50,7 +48,7 @@
       - peek
       - spotify-client
       - google-chrome-stable
-      - chromium
+      - google-chrome-beta
       - wireshark
       - gphoto2
       - v4l2loopback-dkms
@@ -58,10 +56,8 @@
       - vlc
       - neovim
       - qt5-style-plugins
-      - thunderbird
       - hexchat
-      - sublime-merge
-      - sublime-text
+      - thunderbird
     state: present
 
 - name: ufw deny all
