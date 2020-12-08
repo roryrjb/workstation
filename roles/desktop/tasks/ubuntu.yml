@@ -58,6 +58,9 @@
       - qt5-style-plugins
       - hexchat
       - thunderbird
+      - kdenlive
+      - audacity
+      - pavucontrol
     state: present
 
 - name: ufw deny all
