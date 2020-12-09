@@ -4,6 +4,7 @@
     - dev
     - kubernetes
     - docker
+    - virt
     - mysql_client
     - nodejs
     - python

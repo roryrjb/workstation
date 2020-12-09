@@ -65,8 +65,5 @@
       - fzf
       - scdoc
       - mycli
-      - qemu
-      - qemu-kvm
-      - qemu-system
       - cargo
     state: present
