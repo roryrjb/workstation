@@ -1,3 +1,12 @@
+- name: gpg keys url
+  become: true
+  become_method: sudo
+  apt_key:
+    url: "{{ item }}"
+    state: present
+  loop:
+    - "https://dl.google.com/linux/linux_signing_key.pub"
+
 - name: add repos
   become: true
   become_method: sudo
@@ -8,6 +17,7 @@
   loop:
     - "ppa:dysfunctionalprogramming/pamixer"
     - "ppa:neovim-ppa/unstable"
+    - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 
 - name: packages
   become: true
@@ -34,9 +44,10 @@
       - obs-studio
       - rhythmbox
       - peek
-      - spotify-client
       - firefox
       - webext-ublock-origin
+      - google-chrome-stable
+      - google-chrome-beta
       - wireshark
       - gphoto2
       - v4l2loopback-dkms
