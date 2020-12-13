@@ -6,6 +6,7 @@
     state: present
   loop:
     - "https://dl.google.com/linux/linux_signing_key.pub"
+    - "https://download.spotify.com/debian/pubkey_0D811D58.gpg"
 
 - name: add repos
   become: true
@@ -18,6 +19,7 @@
     - "ppa:dysfunctionalprogramming/pamixer"
     - "ppa:neovim-ppa/unstable"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    - "deb http://repository.spotify.com stable non-free"
 
 - name: packages
   become: true
@@ -44,8 +46,6 @@
       - obs-studio
       - rhythmbox
       - peek
-      - firefox
-      - webext-ublock-origin
       - google-chrome-stable
       - google-chrome-beta
       - wireshark
@@ -55,11 +55,11 @@
       - vlc
       - neovim
       - weechat
-      - thunderbird
       - kdenlive
       - audacity
       - pavucontrol
-      - rxvt-unicode-256color
+      - spotify-client
+      - ubuntu-restricted-extras
     state: present
 
 - name: ufw deny all
