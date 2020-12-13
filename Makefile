@@ -5,7 +5,13 @@ Python-3.7.9.tgz:
 	curl -LO https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz
 
 .deps:
-	sudo apt install -y ansible curl python3-psutil && touch .deps
+	sudo apt install -y ansible curl python3-psutil cmake pkg-config \
+		libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3 cargo && \
+		touch .deps
+
+alacritty: .alacritty
+.alacritty: .deps
+	cargo install alacritty && touch .alacritty
 
 .python37: .deps Python-3.7.9.tgz
 	sudo apt install -y build-essential libssl-dev libreadline-dev \

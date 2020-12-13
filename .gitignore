@@ -1,4 +1,5 @@
 /*.private
 .deps
+.alacritty
 .python*
 Python-3*
