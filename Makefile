@@ -25,8 +25,8 @@ alacritty: .alacritty
 
 clean:
 	sudo rm -rf Python-3.7.9/
-	rm -rfv .deps .python37 Python-3.7.9.tgz
+	rm -rfv .deps .python37 .alacritty Python-3.7.9.tgz
 
-ubuntu: .python37
+ubuntu: .alacritty .python37
 	PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin \
 		ansible-playbook --ask-become-pass -l localhost -i local ubuntu.yml
