@@ -66,4 +66,6 @@
       - scdoc
       - mycli
       - cargo
+      - musl-dev
+      - musl-tools
     state: present
