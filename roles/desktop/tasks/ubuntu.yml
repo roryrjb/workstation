@@ -7,7 +7,6 @@
   loop:
     - "https://dl.google.com/linux/linux_signing_key.pub"
     - "https://download.spotify.com/debian/pubkey_0D811D58.gpg"
-    - "https://packages.microsoft.com/keys/microsoft.asc"
 
 - name: add repos
   become: true
@@ -21,7 +20,6 @@
     - "ppa:neovim-ppa/unstable"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb http://repository.spotify.com stable non-free"
-    - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 
 - name: packages
   become: true
@@ -54,15 +52,11 @@
       - gphoto2
       - v4l2loopback-dkms
       - transmission-gtk
-      - vlc
       - neovim
       - weechat
-      - kdenlive
       - audacity
       - pavucontrol
       - spotify-client
-      - ubuntu-restricted-extras
-      - code
     state: present
 
 - name: ufw deny all
