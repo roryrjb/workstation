@@ -52,6 +52,7 @@
       - audacity
       - pavucontrol
       - celluloid
+      - zsh
     state: present
 
 - name: remove packages
