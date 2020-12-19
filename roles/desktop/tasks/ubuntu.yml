@@ -17,7 +17,6 @@
     codename: "{{ release }}"
   loop:
     - "ppa:dysfunctionalprogramming/pamixer"
-    - "ppa:neovim-ppa/unstable"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb http://repository.spotify.com stable non-free"
 
@@ -52,7 +51,6 @@
       - gphoto2
       - v4l2loopback-dkms
       - transmission-gtk
-      - neovim
       - weechat
       - audacity
       - pavucontrol
