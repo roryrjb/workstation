@@ -6,7 +6,6 @@
     - docker
     - virt
     - mysql_client
-    - oracle_mysql
     - nodejs
     - python
     - desktop
