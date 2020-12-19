@@ -1,2 +1,19 @@
 - name: laptop
   include: "{{ distro }}.yml"
+
+- name: python 3 packages
+  pip:
+    name: "{{ item }}"
+    executable: /opt/python37/bin/pip3
+    extra_args: --user
+  loop:
+    - vim-vint
+    - yamllint
+
+- name: npm packages
+  npm:
+    name: "{{ item }}"
+    global: true
+  with_items:
+    - st
+    - csslint

@@ -17,18 +17,3 @@
         src: "{{ role_path }}/files/10-libinput.conf",
         dest: "/etc/X11/xorg.conf.d/10-libinput.conf",
       }
-
-- name: add wireshark group
-  become: true
-  become_method: sudo
-  group:
-    name: wireshark
-    state: present
-
-- name: add to wireshark group
-  become: true
-  become_method: sudo
-  user:
-    name: "{{ ansible_user }}"
-    groups: wireshark
-    append: "yes"
