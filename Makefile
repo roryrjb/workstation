@@ -5,13 +5,8 @@ Python-3.7.9.tgz:
 	curl -LO https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz
 
 .deps:
-	sudo apt install -y ansible curl python3-psutil cmake pkg-config \
-		libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3 cargo && \
+	sudo apt install -y ansible curl python3-psutil && \
 		touch .deps
-
-alacritty: .alacritty
-.alacritty: .deps
-	cargo install alacritty && touch .alacritty
 
 .python37: .deps Python-3.7.9.tgz
 	sudo apt install -y build-essential libssl-dev libreadline-dev \
@@ -27,6 +22,6 @@ clean:
 	sudo rm -rf Python-3.7.9/
 	rm -rfv .deps .python37 .alacritty Python-3.7.9.tgz
 
-ubuntu: .alacritty .python37
+ubuntu: .python37
 	PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin \
 		ansible-playbook --ask-become-pass -l localhost -i local ubuntu.yml
