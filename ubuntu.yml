@@ -1,11 +1,11 @@
 - hosts: all
   roles:
     - common
+    - nodejs
     - dev
     - kubernetes
     - docker
     - virt
     - mysql_client
-    - nodejs
     - python
     - desktop

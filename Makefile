@@ -5,8 +5,11 @@ Python-3.7.9.tgz:
 	curl -LO https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz
 
 .deps:
-	sudo apt install -y ansible curl python3-psutil && \
+	sudo apt install -y ansible curl python3-psutil zsh && \
 		touch .deps
+
+.zsh: .deps
+	chsh -s $(shell which zsh)
 
 .python37: .deps Python-3.7.9.tgz
 	sudo apt install -y build-essential libssl-dev libreadline-dev \
@@ -20,8 +23,8 @@ Python-3.7.9.tgz:
 
 clean:
 	sudo rm -rf Python-3.7.9/
-	rm -rfv .deps .python37 .alacritty Python-3.7.9.tgz
+	rm -rfv .deps .python37 .zsh Python-3.7.9.tgz
 
-ubuntu: .python37
+ubuntu: .zsh .python37
 	PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin \
 		ansible-playbook --ask-become-pass -l localhost -i local ubuntu.yml
