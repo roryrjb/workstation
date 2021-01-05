@@ -9,7 +9,7 @@ Python-3.7.9.tgz:
 		touch .deps
 
 .zsh: .deps
-	chsh -s $(shell which zsh)
+	chsh -s $(shell which zsh) && touch .zsh
 
 .python37: .deps Python-3.7.9.tgz
 	sudo apt install -y build-essential libssl-dev libreadline-dev \
