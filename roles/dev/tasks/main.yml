@@ -18,7 +18,3 @@
     - st
     - csslint
     - typescript
-    - typescript-language-server
-    - javascript-typescript-langserver
-    - lsp-tsserver
-    - bash-language-server
