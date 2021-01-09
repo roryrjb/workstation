@@ -45,6 +45,7 @@
       - audacity
       - pavucontrol
       - spotify-client
+      - hexchat
     state: present
 
 - name: ufw deny all
