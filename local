@@ -2,7 +2,7 @@
 localhost ansible_connection=local
 
 [all:vars]
-release=groovy
+release=focal
 lts_release=focal
 distro=ubuntu
 platform=linux
