@@ -4,17 +4,39 @@
 - name: python 3 packages
   pip:
     name: "{{ item }}"
-    executable: /opt/python37/bin/pip3
+    executable: pip
     extra_args: --user
   loop:
-    - vim-vint
-    - yamllint
+    - black==21.5b1
+    - flake8==3.9.2
+    - isort==5.8.0
+    - memory_profiler
+    - PyQt5
+    - py-spy
+    - mem_top
+    - matplotlib
+    - pre-commit
+    - asciinema
+    - mypy
 
 - name: npm packages
   npm:
     name: "{{ item }}"
     global: true
   with_items:
-    - st
-    - csslint
     - typescript
+    - typescript-language-server
+
+- name: sysctl
+  become: true
+  become_method: sudo
+  blockinfile:
+    name: /etc/sysctl.conf
+    marker: '# {mark} ansible desktop'
+    block: |
+      fs.inotify.max_user_watches=262144
+
+- name: rust
+  shell: curl https://sh.rustup.rs -sSf | sh -s -- -q --no-modify-path -y
+  args:
+    creates: "{{ ansible_env.HOME }}/.cargo/env"

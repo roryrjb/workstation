@@ -18,54 +18,46 @@
       - valgrind
       - gdb
       - lldb
-      - strace
-      - universal-ctags
       - m4
-      - jq
-      - uuid-runtime
-      - dnsutils
       - clang
       - clang-format
       - clang-tidy
       - clangd
       - bear
       - minisign
-      - s3cmd
-      - libssl-dev
-      - libreadline-dev
-      - libbz2-dev
-      - libsqlite3-dev
-      - golang
       - devscripts
       - debhelper
       - reprepro
       - meson
-      - tidy
-      - perltidy
       - certbot
       - cmake
       - flex
       - bison
-      - libelf-dev
-      - libcurl4-openssl-dev
-      - libjpeg-dev
       - uchardet
-      - liblzma-dev
-      - bpftrace
-      - bmake
       - oksh
       - xvfb
-      - libxcursor1
-      - libnss3
-      - libgdk-pixbuf2.0-0
-      - libgtk-3-0
-      - libxss1
-      - libgit2-dev
-      - libx11-dev
-      - fzf
       - scdoc
-      - mycli
-      - cargo
-      - musl-dev
-      - musl-tools
+      - hugo
+      - zzuf
+      - afl++
+      - tesseract-ocr
+      - pkg-config
+      - automake
+      - libtool
+      - libssl-dev
+      - libreadline-dev
+      - libbz2-dev
+      - libsqlite3-dev
+      - libjpeg-dev
+      - libcurl4-openssl-dev
+      - libelf-dev
+      - libgdk-pixbuf2.0-0
+      - libgit2-dev
+      - libgtk-3-0
+      - liblzma-dev
+      - libnss3
+      - libreadline-dev
+      - libx11-dev
+      - libxcursor1
+      - libxss1
     state: present

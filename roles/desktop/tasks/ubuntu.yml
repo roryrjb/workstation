@@ -7,6 +7,9 @@
   loop:
     - "https://download.spotify.com/debian/pubkey_0D811D58.gpg"
     - "https://updates.signal.org/desktop/apt/keys.asc"
+    - "https://packages.microsoft.com/keys/microsoft.asc"
+    - "https://download.sublimetext.com/sublimehq-pub.gpg"
+    - "https://dl.google.com/linux/linux_signing_key.pub"
 
 - name: add repos
   become: true
@@ -19,6 +22,9 @@
     - "ppa:dysfunctionalprogramming/pamixer"
     - "deb http://repository.spotify.com stable non-free"
     - "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main"
+    - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+    - "deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main"
+    - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 
 - name: packages
   become: true
@@ -27,29 +33,32 @@
     install_recommends: no
     name:
       - pamixer
-      - openssh-server
-      - openvpn
+      - ufw
       - hplip
-      - tlp
-      - fail2ban
       - ffmpeg
       - libreoffice
-      - hplip
       - gimp
+      - inkscape
       - xclip
       - youtube-dl
-      - hugo
-      - obs-studio
-      - rhythmbox
       - peek
-      - gphoto2
-      - v4l2loopback-dkms
       - audacity
-      - pavucontrol
       - spotify-client
-      - hexchat
       - signal-desktop
-      - fonts-firacode
+      - code
+      - 1password
+      - ubuntu-restricted-addons
+      - gstreamer1.0-plugins-bad
+      - gstreamer1.0-plugins-ugly      
+      - qt5-style-plugins
+      - vlc
+      - sublime-merge
+      - sublime-text
+      - transmission-gtk
+      - gnome-tweaks
+      - google-chrome-stable
+      - google-chrome-beta
+      - google-chrome-unstable
     state: present
 
 - name: ufw deny all

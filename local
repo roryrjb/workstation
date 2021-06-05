@@ -7,3 +7,4 @@ lts_release=focal
 distro=ubuntu
 platform=linux
 arch=amd64
+ansible_python_interpreter=/usr/bin/python3
