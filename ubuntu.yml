@@ -3,6 +3,7 @@
     - common
     - nodejs
     - dev
+    - tracing
     - kubernetes
     - docker
     - virt
