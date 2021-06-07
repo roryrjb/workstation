@@ -19,16 +19,22 @@
       QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 - name: 1password
+  become: true
+  become_method: sudo
   shell: "curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg"
   args:
     creates: "/usr/share/keyrings/1password-archive-keyring.gpg"
 
 - name: 1password
+  become: true
+  become_method: sudo
   shell: "curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg"
   args:
     creates: "/usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg"
 
 - name: 1password
+  become: true
+  become_method: sudo
   shell: "curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | tee /etc/debsig/policies/AC2D62742012EA22/1password.pol"
   args:
     creates: "/etc/debsig/policies/AC2D62742012EA22/1password.pol"

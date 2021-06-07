@@ -25,6 +25,7 @@
     - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
     - "deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    - "deb https://download.sublimetext.com/ apt/stable/"
 
 - name: packages
   become: true
