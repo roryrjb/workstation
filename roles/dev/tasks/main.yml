@@ -26,6 +26,7 @@
   with_items:
     - typescript
     - typescript-language-server
+    - pyright
 
 - name: sysctl
   become: true

@@ -60,4 +60,5 @@
       - libx11-dev
       - libxcursor1
       - libxss1
+      - golang
     state: present
