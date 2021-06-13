@@ -10,13 +10,9 @@
     - black==21.5b1
     - flake8==3.9.2
     - isort==5.8.0
-    - memory_profiler
-    - PyQt5
     - py-spy
-    - mem_top
     - matplotlib
     - pre-commit
-    - asciinema
     - mypy
 
 - name: npm packages
