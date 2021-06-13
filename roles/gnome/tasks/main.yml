@@ -1,0 +1,8 @@
+- name: update gnome dconf settings
+  dconf:
+    key: '{{ item.key }}'
+    value: '{{ item.value }}'
+  loop:
+    - {key: '/org/gnome/settings-daemon/plugins/color/night-light-enabled', value: 'true'}
+    - {key: '/org/gnome/desktop/peripherals/trackball/scroll-wheel-emulation-button', value: '8'}
+

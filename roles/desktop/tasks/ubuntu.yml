@@ -48,11 +48,13 @@
       - gstreamer1.0-plugins-bad
       - gstreamer1.0-plugins-ugly
       - vlc
+      - qt5-style-plugins
       - transmission-gtk
       - google-chrome-stable
       - google-chrome-beta
       - google-chrome-unstable
       - neovim
+      - neovim-qt
     state: present
 
 - name: ufw deny all
