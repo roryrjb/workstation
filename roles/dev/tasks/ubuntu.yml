@@ -61,4 +61,6 @@
       - libxcursor1
       - libxss1
       - golang
+      - tesseract-ocr
+      - tcc
     state: present

@@ -14,6 +14,7 @@
     - matplotlib
     - pre-commit
     - mypy
+    - pynvim
 
 - name: npm packages
   npm:
@@ -23,6 +24,7 @@
     - typescript
     - typescript-language-server
     - pyright
+    - vscode-langservers-extracted
 
 - name: sysctl
   become: true
@@ -31,7 +33,7 @@
     name: /etc/sysctl.conf
     marker: '# {mark} ansible desktop'
     block: |
-      fs.inotify.max_user_watches=262144
+      fs.inotify.max_user_watches=50000
 
 - name: rust
   shell: curl https://sh.rustup.rs -sSf | sh -s -- -q --no-modify-path -y
